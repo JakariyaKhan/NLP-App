@@ -33,5 +33,16 @@ class NLP:
 
         label4 = Label(self.root, text="Not a member?", bg="#d9d9d9", font=('Verdana', 10))
         label4.pack(pady=(10, 0))
-        register_btn = Button(self.root, text="Register here", bg="blue", fg="white", width=20, command=self.register_gui)
+        register_btn = Button(self.root, text="Register here", bg="blue", fg="white", width=20)
         register_btn.pack(pady=(5, 10), ipady=4)
+
+    def login(self):
+        email = self.email_input.get()
+        password = self.password_input.get()
+        if email and password:
+            messagebox.showinfo("Login", f"Welcome, {email}!")
+        else:
+            messagebox.showwarning("Login Failed", "Please enter both email and password.")
+
+
+nlp=NLP()
