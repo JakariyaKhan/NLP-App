@@ -72,5 +72,18 @@ class NLP:
         login_btn = Button(self.root, text="Login here", bg="blue", fg="white", width=20, command=self.login_gui)
         login_btn.pack(pady=(5, 10), ipady=4)
 
+    def register(self):
+        name = self.name_input.get()
+        email = self.email_input.get()
+        password = self.password_input.get()
+        if name and email and password:
+            messagebox.showinfo("Register", f"Welcome, {email}!")
+        else:
+            messagebox.showwarning("Register Failed", "Please fill in all fields.")
+
+    def clear(self):
+        for widget in self.root.pack_slaves():
+            widget.destroy()
+
 
 nlp=NLP()
