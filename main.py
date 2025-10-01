@@ -7,14 +7,14 @@ class NLP:
 
         self.root.title("NLP App")
         self.root.configure(bg="#d9d9d9")
-        self.root.geometry("400x400")
+        self.root.geometry("500x600")
         self.root.resizable(False, False)
 
         self.login_gui()
         self.root.mainloop()
 
     def login_gui(self):
-        # self.clear()
+        self.clear()
         heading = Label(self.root, text="NLP App", fg="black", bg="#d9d9d9", font=('Verdana', 20, 'bold'))
         heading.pack(pady=(20, 10))
 
@@ -45,7 +45,7 @@ class NLP:
             messagebox.showwarning("Login Failed", "Please enter both email and password.")
 
     def register_gui(self):
-        # self.clear()
+        self.clear()
         heading = Label(self.root, text="NLP App", fg="black", bg="#d9d9d9", font=('Verdana', 20, 'bold'))
         heading.pack(pady=(20, 10))
 
@@ -64,7 +64,7 @@ class NLP:
         self.password_input = Entry(self.root, width=40, fg="black", show="*")
         self.password_input.pack(pady=(5, 10), ipady=4)
 
-        register_btn = Button(self.root, text="Register", bg="green", fg="white", width=20)
+        register_btn = Button(self.root, text="Register", bg="green", fg="white", width=20,command=self.register)
         register_btn.pack(pady=(10, 10), ipady=4)
 
         label4 = Label(self.root, text="Already a member?", bg="#d9d9d9", font=('Verdana', 10))
